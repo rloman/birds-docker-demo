@@ -6,6 +6,7 @@ import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,6 +23,9 @@ import nl.spiraltrain.bird.services.BirdService;
 @RequestMapping("/birds")
 @Transactional
 public class BirdRestService {
+   
+   @Autowired
+   private ConfigurableApplicationContext applicationContext;
    
    @Autowired
    private BirdService birdService;
@@ -51,6 +55,17 @@ public class BirdRestService {
       
       Bird result = this.birdService.findById(id);
       
+      this.applicationContext.close();
+      
       return result;
+   }
+   
+   @RequestMapping(value="/{id}", method=RequestMethod.DELETE)
+   public void deleteById(@PathVariable("id") long id) {
+      
+      birdService.deleteById(id);
+      
+      this.applicationContext.close();
+      
    }
 }

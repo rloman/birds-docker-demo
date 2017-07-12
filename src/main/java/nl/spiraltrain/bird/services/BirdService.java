@@ -40,5 +40,15 @@ public class BirdService {
    public void save(String name, byte age) {
       this.save(new Bird(name, age));
    }
+   
+   @Transactional
+   public void delete(Bird victim) {
+      this.birdRepository.delete(victim);
+   }
+   
+   @Transactional
+   public void deleteById(long id) {
+      this.birdRepository.delete(id);
+   }
 
 }
