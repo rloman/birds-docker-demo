@@ -21,6 +21,8 @@ public class Bird implements Serializable {
    private String name;
    private byte age;
    
+   private int ietsHeelAnders;
+   
    public Bird() {
       this.age = Double.valueOf(Math.random()* 100).byteValue();
       
@@ -67,4 +69,11 @@ public class Bird implements Serializable {
    public void preDestroy() {
       System.err.println("PreDestroy  is called");
    }
+
+   
+   public int getIetsHeelAnders() {
+      return ietsHeelAnders;
+   }
+
+   
 }
