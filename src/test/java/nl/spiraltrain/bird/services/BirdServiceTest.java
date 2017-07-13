@@ -3,23 +3,32 @@ package nl.spiraltrain.bird.services;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import nl.spiraltrain.bird.BirdApplication;
 import nl.spiraltrain.bird.domain.Bird;
-import nl.spiraltrain.bird.persistence.BirdRepository;
 
-@RunWith(MockitoJUnitRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes=BirdApplication.class)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT)
+@ActiveProfiles("unittest")
 public class BirdServiceTest {
    
    
-   @InjectMocks
+   @Autowired
    private BirdService birdService;
    
-   @Mock
-   private BirdRepository birdRepository;
+   @Test
+   public void testSave() {
+      
+      Bird b = new Bird();
+      this.birdService.save(b);
+   }
    
    @Test
    public void testFindById() {
@@ -28,7 +37,8 @@ public class BirdServiceTest {
       mock.setName("Maven");
       mock.setAge((byte) 31);
       
-      Mockito.when(birdRepository.findOne(3L)).thenReturn(mock);
+//      Mockito.when(birdRepository.findOne(Mockito.any(Egg.class))).thenReturn(mock);
+//      Mockito.when(birdRepository.findOne(3L)).thenReturn(mock);
       
       Bird b = this.birdService.findById(3);
       
