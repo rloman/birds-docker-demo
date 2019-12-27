@@ -1,4 +1,4 @@
-package nl.spiraltrain.bird.services;
+package nl.carpago.bird.services;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -8,8 +8,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import nl.spiraltrain.bird.domain.Bird;
-import nl.spiraltrain.bird.persistence.BirdRepository;
+import nl.carpago.bird.domain.Bird;
+import nl.carpago.bird.persistence.BirdRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 public class BirdServiceTest {

@@ -1,4 +1,4 @@
-package nl.spiraltrain.bird;
+package nl.carpago.bird;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

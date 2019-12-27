@@ -1,4 +1,4 @@
-package nl.spiraltrain.bird.services;
+package nl.carpago.bird.services;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -10,8 +10,8 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import nl.spiraltrain.bird.BirdApplication;
-import nl.spiraltrain.bird.domain.Bird;
+import nl.carpago.bird.BirdApplication;
+import nl.carpago.bird.domain.Bird;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes=BirdApplication.class)

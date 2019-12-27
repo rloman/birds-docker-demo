@@ -1,4 +1,4 @@
-package nl.spiraltrain.bird.rest;
+package nl.carpago.bird.rest;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import nl.spiraltrain.bird.domain.Bird;
-import nl.spiraltrain.bird.services.BirdService;
+import nl.carpago.bird.domain.Bird;
+import nl.carpago.bird.services.BirdService;
 
 @RestController
 @Produces(MediaType.APPLICATION_JSON)

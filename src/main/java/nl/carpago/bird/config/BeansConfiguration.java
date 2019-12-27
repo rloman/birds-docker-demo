@@ -1,12 +1,10 @@
-package nl.spiraltrain.bird.config;
+package nl.carpago.bird.config;
 
-import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
-import org.springframework.context.annotation.Scope;
 
-import nl.spiraltrain.bird.domain.Bird;
+import nl.carpago.bird.domain.Bird;
 
 @Configuration
 public class BeansConfiguration {

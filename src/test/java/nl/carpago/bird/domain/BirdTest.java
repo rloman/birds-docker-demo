@@ -1,4 +1,4 @@
-package nl.spiraltrain.bird.domain;
+package nl.carpago.bird.domain;
 
 import org.junit.Assert;
 import org.junit.Before;
